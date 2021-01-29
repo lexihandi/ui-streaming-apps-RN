@@ -1,4 +1,5 @@
-/* eslint-disable prettier/prettier */
 import Header from './header';
+import Banner from './banner';
+import Content from './content';
 
-export {Header};
+export {Header, Banner, Content};
