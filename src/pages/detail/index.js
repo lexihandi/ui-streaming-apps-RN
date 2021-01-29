@@ -1,16 +1,15 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {Header} from '../../components';
 
-const Home = () => {
+const Detail = () => {
   return (
     <View>
-      <Header />
+      <Text>Detail</Text>
     </View>
   );
 };
 
-export default Home;
+export default Detail;
 
 const styles = StyleSheet.create({});
