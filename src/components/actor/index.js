@@ -20,8 +20,21 @@ export default Actor;
 
 const styles = StyleSheet.create({
   wrapper: {padding: 20, flexDirection: 'row'},
-  cast: {flexDirection: 'row', marginRight: 20},
-  img: {borderRadius: 8, height: 100, width: 100},
+  cast: {
+    flexDirection: 'row',
+    marginRight: 20,
+    padding: 10,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: colors.gradient,
+    backgroundColor: colors.background,
+  },
+  img: {
+    borderRadius: 8,
+    height: 100,
+    width: 90,
+    resizeMode: 'stretch',
+  },
   text: {alignSelf: 'center', marginLeft: 10},
   name: {
     fontFamily: fonts.primary[600],
