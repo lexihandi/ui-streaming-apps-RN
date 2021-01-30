@@ -10,7 +10,7 @@ const Tab = createBottomTabNavigator();
 function Menu() {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Home" component={Home} options={{tabBarBadge: 3}} />
+      <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Explore" component={Explore} />
       <Tab.Screen name="Account" component={Account} />
     </Tab.Navigator>
@@ -20,7 +20,7 @@ function Menu() {
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="Detail">
         <Stack.Screen
           name="Home"
           component={Menu}
