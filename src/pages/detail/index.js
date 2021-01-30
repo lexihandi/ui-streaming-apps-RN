@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import React from 'react';
 import {
   Image,
@@ -14,19 +13,25 @@ import {
   IconFullStar,
   IconHalfStar,
   IconPlay,
+  ImageFreeyaAlan,
+  ImageHenryCavill,
   ImageTheWitcher,
 } from '../../assets';
 import {Actor} from '../../components';
 import {colors, fonts} from '../../utils';
 
-const Detail = () => {
+const Detail = ({navigation}) => {
   return (
     <View style={styles.page}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <TouchableOpacity>
-          <IconBack style={styles.icon} />
+        <TouchableOpacity
+          style={styles.icon}
+          onPress={() => navigation.navigate('Home')}>
+          <IconBack />
         </TouchableOpacity>
-        <Image source={ImageTheWitcher} style={styles.img} />
+        <View>
+          <Image source={ImageTheWitcher} style={styles.img} />
+        </View>
         <View style={styles.wrapper}>
           <Text style={styles.title}>The Witcher</Text>
           <Text style={styles.genre}>Sci-Fiction</Text>
@@ -47,7 +52,12 @@ const Detail = () => {
           </View>
         </View>
         <Text style={styles.text}>Cast</Text>
-        <Actor />
+        <View style={styles.wrapperActor}>
+          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+            <Actor image={ImageHenryCavill} name="Henry Cavill" role="Geralt" />
+            <Actor image={ImageFreeyaAlan} name="Freeya Alan" role="Ciri" />
+          </ScrollView>
+        </View>
       </ScrollView>
     </View>
   );
@@ -64,6 +74,16 @@ const styles = StyleSheet.create({
     width: 450,
     zIndex: -1,
     flex: 1,
+    position: 'relative',
+  },
+  bg: {
+    backgroundColor: colors.gradient,
+    width: 450,
+    height: 140,
+    position: 'absolute',
+    top: 340,
+    opacity: 0.5,
+    shadowOpacity: 1,
   },
   wrapper: {marginTop: 20},
   title: {
@@ -76,13 +96,14 @@ const styles = StyleSheet.create({
     fontFamily: fonts.primary[500],
     fontSize: 16,
     color: colors.text.secondary,
-    bottom: 10,
+    bottom: 5,
     textAlign: 'center',
   },
   star: {flexDirection: 'row', marginBottom: 20, alignSelf: 'center'},
   wrapperIcon: {
     flexDirection: 'row',
     justifyContent: 'space-evenly',
+    marginTop: 10,
     marginLeft: 130,
     marginRight: 130,
   },
@@ -92,4 +113,5 @@ const styles = StyleSheet.create({
     color: colors.text.primary,
     paddingLeft: 20,
   },
+  wrapperActor: {flexDirection: 'row'},
 });
