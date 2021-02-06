@@ -4,7 +4,6 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Home, Detail, Explore, Account} from './pages';
 import {colors} from '../src/utils';
-import {IconAccount, IconExplore, IconHome} from './assets';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const Stack = createStackNavigator();
